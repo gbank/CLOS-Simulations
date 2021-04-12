@@ -4,70 +4,11 @@ import Topology.CLOSNetwork.*;
 
 public class Main {
 	public static void main(String[] args) {		
-		
-//		increasingKExperiment(128, 128, false,128, Type.INT_D, "alltoone", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(128, 128, false,128, Type.INT_SD, "alltoone", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(128, 128, false,128, Type.SP_D, "alltoone", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(128, 128, false,128, Type.SP_SD, "alltoone", FailType.RANDOM, 0.2, 100);
-//		
-//		increasingKExperiment(256, 256, false,128, Type.INT_D, "alltoone", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(256, 256, false,128, Type.INT_SD, "alltoone", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(256, 256, false,128, Type.SP_D, "alltoone", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(256, 256, false,128, Type.SP_SD, "alltoone", FailType.RANDOM, 0.2, 100);
-//		
-		//increasingKExperiment(896, 896, false,128, Type.INT_D, "alltoone", FailType.RANDOM, 0.2, 100);
-		//increasingKExperiment(896, 896, false,128, Type.SP_D, "alltoone", FailType.RANDOM, 0.2, 100);
-		//increasingKExperiment(896, 896, false,128, Type.SP_SD, "alltoone", FailType.RANDOM, 0.2, 100);
-		//increasingKExperiment(896, 896, false,128, Type.INT_SD, "alltoone", FailType.RANDOM, 0.2, 100);
-		
-		//***********************
-		
-//		increasingKExperiment(128, 128, false,128, Type.INT_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(128, 128, false,128, Type.INT_SD, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(128, 128, false,128, Type.SP_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(128, 128, false,128, Type.SP_SD, "permutation", FailType.RANDOM, 0.2, 100);
-//		
-//		increasingKExperiment(256, 256, false,128, Type.INT_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(256, 256, false,128, Type.INT_SD, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(256, 256, false,128, Type.SP_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(256, 256, false,128, Type.SP_SD, "permutation", FailType.RANDOM, 0.2, 100);
-//		
-//		increasingKExperiment(384, 768, false,128, Type.INT_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(384, 768, false,128, Type.INT_SD, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(384, 768, false,128, Type.SP_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(384, 768, false,128, Type.SP_SD, "permutation", FailType.RANDOM, 0.2, 100);
-		
-//		increasingKExperiment(896, 896, false,128, Type.INT_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(896, 896, false,128, Type.SP_D, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(896, 896, false,128, Type.SP_SD, "permutation", FailType.RANDOM, 0.2, 100);
-//		increasingKExperiment(896, 896, false,128, Type.INT_SD, "permutation", FailType.RANDOM, 0.2, 100);
-		
-		
-		increasingPExperiment(0.421875, 0.421875, 128, false, 0.015625, Type.INT_D, "alltoone", FailType.DESTINATION, 100);
-//		increasingPExperiment(0.0, 0.5, 128, false, 0.015625, Type.INT_SD, "alltoone",  FailType.DESTINATION, 100);
-//		increasingPExperiment(0.0, 0.5, 128, false, 0.015625, Type.SP_D, "alltoone",  FailType.DESTINATION, 100);
-//		increasingPExperiment(0.0, 0.5, 128, false, 0.015625, Type.SP_SD, "alltoone",  FailType.DESTINATION, 100);
-		
-		
-//		for(CLOSNetwork.Type typ : CLOSNetwork.Type.values()) {
-//			int k = 128;
-//			int intervals = (int) (Math.log(k) / Math.log(2));
-//			System.out.println(intervals);
-//			for(int i = 0; i < 100; i++) {
-//				CLOSNetwork net = new CLOSNetwork(typ, k, intervals);
-//				net.initEdges();
-//				Node destination = net.randomBottomLayerNode();
-//				net.failEdges(CLOSNetwork.FailType.RANDOM, 0.2, null);
-//				net.initRoutingState();
-//				Result r = net.allToOneRouting(false, destination);
-//				LoadStatistics.printLoad(r);
-//				net.healAllEdges();
-//			}
-//		}
-			
+				
 		/**
 		 * How to use the CLOSNetwork class:
 		 */
+		 
 		//Create network 
 		//CLOSNetwork net = new CLOSNetwork(CLOSNetwork.Type.INTERVAL,100, 10);
 		
@@ -87,6 +28,12 @@ public class Main {
 		
 		//Heal Failures to allow for choosing a different failures scenario
 		//net.healAllEdges();
+		
+		/**
+		*  Using Experiments below:
+		*/
+		//increasingKExperiment(512, 896, false,128, Type.INT_D, "alltoone", FailType.RANDOM, 0.2, 100);
+		//increasingPExperiment(0.0, 0.5, 128, false, 0.01, Type.INT_SD, "alltoone",  FailType.DESTINATION, 100);
 		
 	}
 	
@@ -131,12 +78,10 @@ public class Main {
 	
 	public static void increasingPExperiment(double startP, double endP, int k, boolean multiply, double stepfactor, CLOSNetwork.Type type, String trafficPattern,CLOSNetwork.FailType fType, int runs) {
 		
-		//For now: Set interval size to ?
-		//Also: What do do with disconnected case?
 		double p = startP;
 		while(p<= endP){
 			int log2k = (int) (Math.log(k) / Math.log(2));
-			CLOSNetwork net = new CLOSNetwork(type,k, log2k);
+			CLOSNetwork net = new CLOSNetwork(type,k, log2k);  //Use log2(k) as interval size (rounded down)
 			net.initEdges();
 			
 			for(int r = 0; r < runs; r++) {

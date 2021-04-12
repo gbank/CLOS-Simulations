@@ -395,7 +395,7 @@ public class CLOSNetwork {
 				Node source = pods[p].bot[i];
 				
 				for(int j = 0; j < numPacks; j++) { //If fromEndpoints is false send only 1 Packet, otherwise send k/2
-					Packet pack = new Packet(new ShortPathSDNode(), destination); //TODO careful about hash function XOR
+					Packet pack = new Packet(new ShortPathSDNode(), destination);
 					boolean reachedDestination = routePacket(pack, source);
 					if(! reachedDestination) {loopCount++;};
 					totalPacks++;
@@ -449,7 +449,7 @@ public class CLOSNetwork {
 		int totalPacks = 0;
 		for(int i = 0; i < allBottomNodes.length; i++) {
 			//Node in position i in the permutation sends the packet to position i+1
-			Packet pack = new Packet(new ShortPathSDNode(), allBottomNodes[(i+1) % numBotNodes]); //TODO careful about hash function XOR (could make second hash for cRouter)
+			Packet pack = new Packet(new ShortPathSDNode(), allBottomNodes[(i+1) % numBotNodes]);
 			boolean reachedDestination = routePacket(pack, allBottomNodes[i]);
 			if(! reachedDestination) {loopCount++;};
 			totalPacks++;
