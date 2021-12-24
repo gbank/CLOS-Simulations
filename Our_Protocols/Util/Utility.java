@@ -1,5 +1,8 @@
 package Util;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -39,4 +42,40 @@ public class Utility {
 			arr[i] = temp;
 		}
 	}
+	
+	public static double[][] parseMatrix(String fName, int n){
+		File fMatrix = new File(fName);
+		double[][] m = new double[n][n];
+		try {
+			FileReader reader = new FileReader(fMatrix);
+			
+			int i;
+			String cNumber = "";
+			int index = 0;
+			int index2 = 0;
+			while((i = reader.read()) != -1) {
+				char c = (char)i;
+				if(c == ' ' || c == '\n') {
+					//System.out.println(cNumber);
+					m[index][index2] = Double.parseDouble(cNumber);
+					index2++;
+					cNumber = "";
+				}
+				else{
+					cNumber = cNumber  + c;
+				}
+				if(c == '\n') {
+					index ++;
+					index2 = 0;
+				}
+			}
+			reader.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(-1);
+		}
+		return m;
+	}
+	
 }

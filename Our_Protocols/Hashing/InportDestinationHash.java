@@ -1,11 +1,12 @@
-package Routing;
+package Hashing;
 
+import Routing.Packet;
 import Topology.Node;
 
 /**
- * Hash function that computes a hash value out of the destination and source address of the given packet
+ * Hash function that computes a hash value out of the inport and source address of the given packet
  */
-public class SourceDestinationHash extends Hash{
+public class InportDestinationHash extends Hash{
 
 	/**
 	 * Applies FNV1a Hash Function to the destination and source fields.
@@ -14,8 +15,9 @@ public class SourceDestinationHash extends Hash{
 	 */
 	@Override
 	public int hash(Packet p, Node cRouter) {
-		return pfnv1a(cRouter.hashCode() ^ p.destination.hashCode()
-				^ p.source.hashCode()); 
+		int hash = fnv1a(cRouter.hashCode() + p.destination.hashCode() + p.last_hop.hashCode()) & 0x7FFFFFFF;
+		
+		return 	hash;
 	}
 
 }

@@ -1,5 +1,6 @@
 package Topology;
 
+import Hashing.Hash;
 import Routing.*;
 
 /***
@@ -11,7 +12,7 @@ import Routing.*;
  * path.
  */
 
-public class ShortPathSDNode extends Node{
+public class ShortPathNode extends Node{
 
 	/**
 	 * Basic constructor for the node object. Nodes are assumed to be created by the block and pod objects.
@@ -22,12 +23,12 @@ public class ShortPathSDNode extends Node{
 	 * @param idLocal	ID of the node 
 	 * @param k	Degree of the routers (should be the same as used in the parent Block/Pod and CLOS Topology)
 	 */
-	public ShortPathSDNode(Type t, Pod pPod, Block pBlock, int idLocal, int k) {
-		super(t, pPod, pBlock, idLocal, k);
+	public ShortPathNode(Type t, Pod pPod, Block pBlock, int idLocal, int k, Hash hashFunction) {
+		super(t, pPod, pBlock, idLocal, k, hashFunction);
 	}
 	
 	//Creation of dummy node
-	public ShortPathSDNode() {
+	public ShortPathNode() {
 		super();
 	}
 
@@ -80,7 +81,7 @@ public class ShortPathSDNode extends Node{
 	 */
 	@Override
 	public Node forward(Packet p) {
-		return forward(p, Hash.destSourceHash);
+		return forward(p, hashFunction);
 	}
 	
 }

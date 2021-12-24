@@ -1,5 +1,20 @@
 package Topology;
 
+import Util.DisconnectException;
+import Util.Edge;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.ThreadLocalRandom;
+
+import Hashing.Hash;
+import Hashing.ThreePermutationDestinationHash;
+import Hashing.ThreePermutationInportDestinationHash;
+import Hashing.ThreePermutationInportSourceDestinationHash;
+import Routing.*;
+import Statistics.*;
+import Util.Utility;
+
+
 /**
  * This class constructs a CLOS Fat-Tree topology consisting of routers with k ports.
  * It is used to simulate the flow of packets and compare the performance of various
@@ -17,11 +32,7 @@ package Topology;
  * 		ACM SIGCOMM Computer Communication Review, Vol. 38 2008
  * )
  */
-import java.util.concurrent.ThreadLocalRandom;
 
-import Routing.*;
-import Statistics.*;
-import Util.Utility;
 
 public class CLOSNetwork {
 	//Degree (number of ports) of employed routers
@@ -33,14 +44,20 @@ public class CLOSNetwork {
 	
 	//A packet that travels more than LOOP_MAX steps
 	//is assumed to be in a cycle
-	public static final int LOOP_MAX = 500;
+	public static final int LOOP_MAX = 1000;
 	
 	//Forwarding strategy which is employed by the nodes
 	public enum Type{
 		INT_D,
-		INT_SD,
+		INT_ID,
+		INT_SID,
+		INT_SIDH,
 		SP_D,
-		SP_SD
+		SP_ID,
+		SP_SID,
+		TP_D,
+		TP_ID,
+		TP_SID
 	}
 	
 	//Strategy used for placing the edge failures
@@ -77,6 +94,18 @@ public class CLOSNetwork {
 			this.k = k;
 			this.type = t;
 			this.numIntervals = numIntervals;
+		}
+		
+		
+		int numPerm = 6;
+		if(t == Type.TP_D) { 
+			Hash.threedHash = new ThreePermutationDestinationHash(k,numPerm);
+		}
+		else if(t == Type.TP_ID) {
+			Hash.threediHash = new ThreePermutationInportDestinationHash(k,numPerm);
+		}
+		else if(t == Type.TP_SID) {
+			Hash.threedisHash = new ThreePermutationInportSourceDestinationHash(k,numPerm);
 		}
 	}
 	
@@ -152,11 +181,14 @@ public class CLOSNetwork {
 	 * 
 	 * Needs to be called after setting the failures and before starting any
 	 * routing experiments.
+	 * 
+	 * Throws exception if a too large amount of edge failures prevent the strategy from
+	 * being used.
 	 */
-	public void initRoutingState() {
+	public void initRoutingState() throws DisconnectException{
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("** Initializing Routing Entries of Nodes...");
-		if(this.type == Type.INT_D || this.type == Type.INT_SD) {
+		if(this.type == Type.INT_D || this.type == Type.INT_ID || this.type == Type.INT_SID) {
 			System.out.println("** Number of Intervals " + numIntervals);
 			System.out.println("** Size of smallest Interval " +  (k/2) / numIntervals);
 		}
@@ -231,9 +263,11 @@ public class CLOSNetwork {
 				for(int a = 0; a < cNode.bLink.length; a++) {
 					if(rng.nextDouble() <= p) {
 						cNode.bFail[a] = true;
+						count++;
 						Node otherNode = cNode.bLink[a];
 						otherNode.tFail[j] = true;
 					}
+					total++;
 				}
 			}
 		}
@@ -353,122 +387,134 @@ public class CLOSNetwork {
 	 * 
 	 * @param p	Packet to forward through the CLOS topology
 	 * @param start	Node at which the packet arrives
-	 * @return	False if packet did not reach p.destination (because it is stuck in a forwarding loop)
-	 * 			True otherwise.
+	 * @return	Path of nodes that the packet travel to arrive at the destination
+	 * 			If the list has length 2*LOOP_MAX then the packet did not arrive at the destination
 	 */
-	private boolean routePacket(Packet p, Node start) {
+	private ArrayList<Node> routePacket(Packet p, Node start) {
 		Node next = start.forward(p);
+		ArrayList<Node> path = new ArrayList<Node>(10);
+		path.add(start);
 		while(next != null) {
-			if(p.hopCount > LOOP_MAX) {next.load = Integer.MAX_VALUE;} //Let packet go through cycle some more
-			if(p.hopCount > 2* LOOP_MAX) {return false;}				//and set infinite load values before terminating
+			path.add(next);
+			if(p.hopCount > 2* LOOP_MAX) {return path;}
 			next = next.forward(p);
 		}
-		return true;
+		return path;
 	}
 	
-	/**
-	 * Perform all-to-one routing towards some node that lies in the bottom layer of a pod.
-	 * Each source sends a single packet towards the destination node. Throughout the experiment,
-	 * the nodes count each time they are hit by a packet, which allows to determine the resulting load.
-	 * 
-	 * @param fromEndpoints	If set to false, then only routers in the bottom layer are contained in the set of sources
-	 * 						Otherwise, each router in the bottom layer starts (k/2) many packets, accounting for the fact that
-	 * 						usually routers in the bottom layer of the pods are connected to (k/2) many servers.
-	 * @param destination	Node in the bottom set of some pod that is used as destination throughout the experiment.
-	 * 						If null is specified, then a bottom layer node is selected uniformly at random
-	 * @return	A Result object that contains basic information about the experiment outcome
-	 */
-	public Result allToOneRouting(boolean fromEndpoints, Node destination) {
-		System.out.println("-----------------------------------------------------------");
-		System.out.println("** All-To-One Routing (each bottom layer node sends multiple packets: " + fromEndpoints + " )");
-		if(destination == null) //Node destination specified --> choose random bottom layer node
-		{
-			destination = randomBottomLayerNode();
+	public Result allToOneRouting(Node dest) {
+		if( ! (dest.type == Node.Type.BOT)) {
+			System.err.println("Destination must lie on bottom layer!");
+			System.exit(-1);
 		}
 		
+		int dest_index = dest.pPod.id * (k/2) + dest.idLocal;
+		
+		int num_bot_nodes = k* k/2;
+		
+		double[][] matrix = new double[num_bot_nodes][num_bot_nodes];
+		for(double[] row : matrix) {
+			row[dest_index] = 1.0;
+		}
+	
+		return trafficMatrixRouting(matrix, "A2O");
+		
+	}
+	
+	
+	
+	public Result trafficMatrixRouting(double[][] matrix, String expName) {
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("** Traffix Matrix Routing (flows between bottom layer nodes only)." );
+		System.out.println("** Entry M[i][j] contains weight of flow sent from i'th to j'th bottom layer node");
+		
 		int loopCount = 0;
-		int numPacks = (fromEndpoints) ? k/2 : 1;
 		int totalPacks = 0;
-		//Send packet from every node in bottom layer
+		
+		double avg_hops = 0.0; //Average hops of flow
+		int max_hops = 0; //Max hop of flow
+		
+		HashMap<Node,Double> nodeLoad = new HashMap<Node,Double>();
+		HashMap<Edge, Double> edgeLoad = new HashMap<Edge, Double>();
+		
 		for(int p = 0; p < pods.length; p++) {
-			for(int i = 0; i < pods[p].bot.length; i++) {
+			for(int i = 0; i < pods[p].bot.length; i++) { // From every destination i
+				
 				Node source = pods[p].bot[i];
 				
-				for(int j = 0; j < numPacks; j++) { //If fromEndpoints is false send only 1 Packet, otherwise send k/2
-					Packet pack = new Packet(new ShortPathSDNode(), destination);
-					boolean reachedDestination = routePacket(pack, source);
-					if(! reachedDestination) {loopCount++;};
-					totalPacks++;
+				for(int q = 0; q < pods.length; q++) {
+					for(int j = 0; j < pods[q].bot.length; j++) {
+						
+						Node destination = pods[q].bot[j];
+						double packet_weight = matrix[p*(k/2) + i][q*(k/2) + j];
+						
+						if(source == destination || packet_weight <0.0000001) { continue; }
+						
+						Packet pack = new Packet(source,destination);
+						pack.weight = packet_weight;
+						
+						ArrayList<Node> hops = routePacket(pack,source);
+						
+						//Compute statistics
+						if(hops.size()-1 >= 2*LOOP_MAX - 10) {
+							loopCount++;
+						}
+						else{ // Do not include packets that traveled in loop in statistic calculation
+							  // Such packets cause all values to be infinite anyways
+							if(hops.size()-1 > max_hops) {
+								max_hops = hops.size()-1;
+							}
+							avg_hops += hops.size()-1;
+							
+							for(Node n: hops) { //Add load to nodes
+								if(nodeLoad.get(n) != null) {
+									nodeLoad.put(n, nodeLoad.get(n) + pack.weight);
+								}
+								else {nodeLoad.put(n, pack.weight);}
+							}
+							
+							
+							if(hops.size() > 1) {
+								for(int u = 0; u < hops.size() - 1; u++) {
+									Node n1 = hops.get(u); Node n2 = hops.get(u+1);
+									Edge edge = new Edge(n1,n2);
+									
+									if(edgeLoad.get(edge) != null) {
+										edgeLoad.put(edge,  edgeLoad.get(edge) + pack.weight);
+									}
+									else {
+										edgeLoad.put(edge, pack.weight);
+									}
+								}
+							}
+						}
+						totalPacks++;
+					}
 				}
+		
 			}
 		}
 		
+		avg_hops = avg_hops / (totalPacks - loopCount);
 		
-		//Store results in array (also reset load counts at the same time)
-		//Also clean-up load values by setting them back to 0
-		Result r= createResultObj();
-		r.packsInCycle = loopCount;
-		r.sentFromServers = fromEndpoints;
-		r.totalPacks = totalPacks;
-		r.experimentType = "ALLTOONE";
-		
-		storeLoadInResultAndCleanUp(r);
-		
-		System.out.println("** Experiment completed. Sent " +  totalPacks + " many Packets");
-		System.out.println("-----------------------------------------------------------\n");
-		return r;
-	}
-	
-	/**
-	 * Performs permutation routing and collects some statistics in form of a Result object.
-	 * Each node on the bottom level of some pod sends out a single packet towards some destination
-	 * that also lies on the bottom level of some pod.
-	 * 
-	 * To match each source with a destination, a random permutation of all nodes that lie in bottom
-	 * levels of a pod is created. The node on position i of this permutation then sends its packet to the node
-	 * on position i+1 (modulo the number of all such nodes).
-	 * 
-	 * @return A Result object containing basic information about the experiment outcome.
-	 */
-	public Result permutationRouting() {
-		System.out.println("-----------------------------------------------------------");
-		System.out.println("** Permutation Routing");
-		
-		//Collect references to bottom nodes in an array.
-		Node[] allBottomNodes = new Node[k * (k/2)];
-		int c = 0;
-		for(int p=0; p < pods.length; p++) {
-			for(int i = 0; i < pods[p].bot.length; i++) {
-				allBottomNodes[c] = pods[p].bot[i]; c++;
-			}
-		}
-		//Create random permutation of bottom nodes
-		Utility.shuffle(allBottomNodes);
-		int numBotNodes = allBottomNodes.length;
-		int loopCount = 0;
-		int totalPacks = 0;
-		for(int i = 0; i < allBottomNodes.length; i++) {
-			//Node in position i in the permutation sends the packet to position i+1
-			Packet pack = new Packet(new ShortPathSDNode(), allBottomNodes[(i+1) % numBotNodes]);
-			boolean reachedDestination = routePacket(pack, allBottomNodes[i]);
-			if(! reachedDestination) {loopCount++;};
-			totalPacks++;
-		}
 		//Store results in array (also reset load counts at the same time)
 		//Also clean-up load values by setting them back to 0
 		Result r= createResultObj();
 		r.packsInCycle = loopCount;
 		r.sentFromServers = false;
 		r.totalPacks = totalPacks;
-		r.experimentType = "PERMUTATION";
-		
-		storeLoadInResultAndCleanUp(r);
+		r.experimentType = expName;
+		r.avgHops = avg_hops;
+		r.maxHops = max_hops;
+		r.nodeLoad = nodeLoad;
+		r.edgeLoad = edgeLoad; 
 				
 		System.out.println("** Experiment completed. Sent " +  totalPacks + " many Packets");
 		System.out.println("-----------------------------------------------------------\n");
 		
 		return r;
 	}
+	
 	
 	
 	//+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ MISC +-+-+-+-+-+-+-+-+-+-+- 
@@ -480,7 +526,7 @@ public class CLOSNetwork {
 	 * 
 	 * @return	Result object.
 	 */
-	private Result createResultObj() {
+	public Result createResultObj() {
 		Result r = new Result();
 		r.k = k;
 		r.failType = cFailType;
@@ -490,37 +536,6 @@ public class CLOSNetwork {
 		r.numFailedEdges = cFailedEdges;
 		return r;
 	}
-	
-	/**
-	 * Helper function to avoid duplication.
-	 * Collects the load of nodes and stores it into a result object while also
-	 * resetting the load values to 0 for future experiments.
-	 * 
-	 * @param r Result object to store the information into
-	 * @return Reference to result object
-	 */
-	private Result storeLoadInResultAndCleanUp(Result r) {
-		int count = 0;
-		r.load = new int[(k/2)*(k/2) + (k)*(k)];
-		for(Block b: blocks) {
-			for(Node n: b.nodes) {
-				r.load[count] = n.load; count++;
-				n.load = 0;
-			}
-		}
-		for(Pod p: pods) {
-			for(Node n : p.top) {
-				r.load[count] = n.load; count++;
-				n.load = 0;
-			}
-			for(Node n : p.bot) {
-				r.load[count] = n.load; count++;
-				n.load = 0;
-			}
-		}
-		return r;
-	}
-	
 	
 	/**
 	 * Select a node in the bottom layer of some pod uniformly at random.

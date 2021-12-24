@@ -14,6 +14,8 @@ public class Packet {
 	public Node last_hop;		
 	public int hopCount; 		//Counts the number of hops the packets have travelled.
 	
+	public double weight = 1;
+	
 	/**
 	 * Basic constructor for Packet objects
 	 * 
@@ -28,7 +30,7 @@ public class Packet {
 			System.err.println("Packets may only be sent to destinations in bottom layer!");
 			System.exit(-1);
 		}
-		
+		this.last_hop = source;
 		this.destinationPod = destination.pPod;
 	}
 	

@@ -1,5 +1,6 @@
-package Routing;
+package Hashing;
 
+import Routing.Packet;
 import Topology.Node;
 
 /**
@@ -14,7 +15,7 @@ public class DestinationHash extends Hash{
 	 */
 	@Override
 	public int hash(Packet p, Node cRouter) {
-		return pfnv1a(cRouter.hashCode() ^ p.destination.hashCode());
+		return 	(fnv1a(cRouter.hashCode()  + p.destination.hashCode())) & 0x7FFFFFFF;
 	}
 	
 }

@@ -1,6 +1,8 @@
 package Topology;
 
+import Hashing.Hash;
 import Routing.*;
+import Util.DisconnectException;
 
 /**
  * Node class that implements an adapted version of the interval routing protocol described
@@ -15,7 +17,7 @@ import Routing.*;
  * can be found in Node.java.
  */
 
-public class IntervalDNode extends Node{
+public class IntervalNode extends Node{
 
 	//Interval in which the nodes resides in
 	int myInterval;
@@ -33,14 +35,14 @@ public class IntervalDNode extends Node{
 	 * @param k	Degree of the routers (should be the same as used in the parent Block/Pod and CLOS Topology)
 	 * @param numIntervals	Number of intervals to split the 
 	 */
-	public IntervalDNode(Type t, Pod pPod, Block pBlock, int idLocal, int k, int numIntervals) {
-		super(t, pPod, pBlock, idLocal, k);
+	public IntervalNode(Type t, Pod pPod, Block pBlock, int idLocal, int k, int numIntervals, Hash hashFunction) {
+		super(t, pPod, pBlock, idLocal, k, hashFunction);
 		this.k = k;
 		this.numIntervals = numIntervals;
 	}
 	
 	//Creation of dummy node
-	public IntervalDNode() {
+	public IntervalNode() {
 		super();
 	}
 
@@ -51,7 +53,7 @@ public class IntervalDNode extends Node{
 	 * include nodes that are failed.
 	 */
 	@Override
-	public void updateRoutingState() {
+	public void updateRoutingState() throws DisconnectException{
 		myInterval = IntervalUtility.getIntervalAssignment(k/2, numIntervals, this.idLocal);
 		
 		if(this.type == Type.BLOCK) {
@@ -106,8 +108,7 @@ public class IntervalDNode extends Node{
 		}
 		
 		if((tFSet != null && tFSet.length == 0) || (bFSet != null && bFSet.length == 0)) {
-			System.err.println("Network got disconnected! Too many edge failures or too small intervals");
-			System.exit(-1);
+			throw new DisconnectException("Routing strategy cannot be emplyed! Too many failures incident to " + this.toString());
 		}
 	}
 
@@ -118,7 +119,7 @@ public class IntervalDNode extends Node{
 	 */
 	@Override
 	public Node forward(Packet p) {
-		return forward(p, Hash.destHash);
+		return forward(p, this.hashFunction);
 	}
 	
 }

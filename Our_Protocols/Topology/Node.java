@@ -1,7 +1,9 @@
 package Topology;
 import java.util.concurrent.ThreadLocalRandom;
 
+import Hashing.Hash;
 import Routing.*;
+import Util.DisconnectException;
 
 /**
  * Class used for the routers inside the CLOS-Topology.
@@ -35,8 +37,6 @@ public abstract class Node {
 	boolean[] tFail;
 	boolean[] bFail;
 	
-	//Counter for the number of packets received throughout the current experiment
-	int load;
 	
 	//Sets of neighbors which can be used for forwarding packets. tFSet forwards via tLinks and
 	//bFSet via bLinks. All these nodes should be intact, that is NOT failed.
@@ -59,6 +59,8 @@ public abstract class Node {
 		BLOCK
 	}
 	
+	Hash hashFunction;
+	
 	/**
 	 * Basic constructor for the node object. Nodes are assumed to be created by the block and pod objects.
 	 * 
@@ -67,8 +69,9 @@ public abstract class Node {
 	 * @param pBlock Parent block. Needs to specified for BLOCK nodes. May be null for TOP or BOTTOM nodes
 	 * @param idLocal	ID of the node 
 	 * @param k	Degree of the routers (should be the same as used in the parent Block/Pod and CLOS Topology)
+	 * @param hashFunction used to generate randomness for routing decisions. Is a function over packet header information
 	 */
-	public Node(Type t, Pod pPod, Block pBlock, int idLocal, int k) {
+	public Node(Type t, Pod pPod, Block pBlock, int idLocal, int k, Hash hashFunction) {
 		this();
 		
 		this.idLocal = idLocal;
@@ -91,6 +94,8 @@ public abstract class Node {
 			tLink = new Node[k/2];
 			tFail = new boolean[k/2];
 		}
+		
+		this.hashFunction = hashFunction;
 	}
 	
 	/**
@@ -105,8 +110,10 @@ public abstract class Node {
 	 * Function that prepares the sets of possible forwarding candidates.
 	 * This function needs to be overwritten and define proper tSet and fSets consisting of
 	 * nodes which may be reached via non-failed links only.
+	 * 
+	 * Throws exception if the routing strategy cannot be employed due to too many link failures
 	 */
-	public abstract void updateRoutingState();
+	public abstract void updateRoutingState() throws DisconnectException;
 	
 	/**
 	 * Hook function, which should call forward(Packet p, Hash h)  after specifying a 
@@ -131,8 +138,6 @@ public abstract class Node {
 	 * @return	Neighbor of the node which receives the packet.
 	 */
 	public Node forward(Packet p, Hash h) {
-		p.last_hop = this;
-		if(this.load < Integer.MAX_VALUE) {this.load ++;}
 		Node nextHop = null;
 		int pHash = h.hash(p, this);
 		if(p.destination == this) {
@@ -163,7 +168,7 @@ public abstract class Node {
 				nextHop = bLink[p.destinationPod.id];
 			}
 		}
-		
+		p.last_hop = this;
 		p.hopCount++;
 		return nextHop;
 	}
