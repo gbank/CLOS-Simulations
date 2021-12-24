@@ -1,0 +1,323 @@
+#main.py
+# GMT Mon Oct 18 11:54:54 2021
+# 
+core0 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core1 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core2 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core3 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core4 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core5 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core6 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core7 agg0 agg8 agg16 agg24 agg32 agg40 agg48 agg56 agg64 agg72 agg80 agg88 agg96 agg104 agg112 agg120
+core8 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core9 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core10 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core11 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core12 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core13 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core14 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core15 agg1 agg9 agg17 agg25 agg33 agg41 agg49 agg57 agg65 agg73 agg81 agg89 agg97 agg105 agg113 agg121
+core16 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core17 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core18 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core19 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core20 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core21 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core22 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core23 agg2 agg10 agg18 agg26 agg34 agg42 agg50 agg58 agg66 agg74 agg82 agg90 agg98 agg106 agg114 agg122
+core24 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core25 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core26 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core27 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core28 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core29 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core30 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core31 agg3 agg11 agg19 agg27 agg35 agg43 agg51 agg59 agg67 agg75 agg83 agg91 agg99 agg107 agg115 agg123
+core32 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core33 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core34 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core35 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core36 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core37 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core38 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core39 agg4 agg12 agg20 agg28 agg36 agg44 agg52 agg60 agg68 agg76 agg84 agg92 agg100 agg108 agg116 agg124
+core40 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core41 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core42 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core43 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core44 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core45 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core46 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core47 agg5 agg13 agg21 agg29 agg37 agg45 agg53 agg61 agg69 agg77 agg85 agg93 agg101 agg109 agg117 agg125
+core48 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core49 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core50 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core51 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core52 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core53 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core54 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core55 agg6 agg14 agg22 agg30 agg38 agg46 agg54 agg62 agg70 agg78 agg86 agg94 agg102 agg110 agg118 agg126
+core56 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core57 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core58 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core59 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core60 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core61 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core62 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+core63 agg7 agg15 agg23 agg31 agg39 agg47 agg55 agg63 agg71 agg79 agg87 agg95 agg103 agg111 agg119 agg127
+agg0 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core0 core1 core2 core3 core4 core5 core6 core7
+agg1 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core8 core9 core10 core11 core12 core13 core14 core15
+agg2 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core16 core17 core18 core19 core20 core21 core22 core23
+agg3 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core24 core25 core26 core27 core28 core29 core30 core31
+agg4 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core32 core33 core34 core35 core36 core37 core38 core39
+agg5 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core40 core41 core42 core43 core44 core45 core46 core47
+agg6 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core48 core49 core50 core51 core52 core53 core54 core55
+agg7 acc0 acc1 acc2 acc3 acc4 acc5 acc6 acc7 core56 core57 core58 core59 core60 core61 core62 core63
+agg8 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core0 core1 core2 core3 core4 core5 core6 core7
+agg9 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core8 core9 core10 core11 core12 core13 core14 core15
+agg10 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core16 core17 core18 core19 core20 core21 core22 core23
+agg11 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core24 core25 core26 core27 core28 core29 core30 core31
+agg12 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core32 core33 core34 core35 core36 core37 core38 core39
+agg13 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core40 core41 core42 core43 core44 core45 core46 core47
+agg14 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core48 core49 core50 core51 core52 core53 core54 core55
+agg15 acc8 acc9 acc10 acc11 acc12 acc13 acc14 acc15 core56 core57 core58 core59 core60 core61 core62 core63
+agg16 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core0 core1 core2 core3 core4 core5 core6 core7
+agg17 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core8 core9 core10 core11 core12 core13 core14 core15
+agg18 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core16 core17 core18 core19 core20 core21 core22 core23
+agg19 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core24 core25 core26 core27 core28 core29 core30 core31
+agg20 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core32 core33 core34 core35 core36 core37 core38 core39
+agg21 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core40 core41 core42 core43 core44 core45 core46 core47
+agg22 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core48 core49 core50 core51 core52 core53 core54 core55
+agg23 acc16 acc17 acc18 acc19 acc20 acc21 acc22 acc23 core56 core57 core58 core59 core60 core61 core62 core63
+agg24 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core0 core1 core2 core3 core4 core5 core6 core7
+agg25 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core8 core9 core10 core11 core12 core13 core14 core15
+agg26 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core16 core17 core18 core19 core20 core21 core22 core23
+agg27 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core24 core25 core26 core27 core28 core29 core30 core31
+agg28 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core32 core33 core34 core35 core36 core37 core38 core39
+agg29 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core40 core41 core42 core43 core44 core45 core46 core47
+agg30 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core48 core49 core50 core51 core52 core53 core54 core55
+agg31 acc24 acc25 acc26 acc27 acc28 acc29 acc30 acc31 core56 core57 core58 core59 core60 core61 core62 core63
+agg32 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core0 core1 core2 core3 core4 core5 core6 core7
+agg33 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core8 core9 core10 core11 core12 core13 core14 core15
+agg34 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core16 core17 core18 core19 core20 core21 core22 core23
+agg35 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core24 core25 core26 core27 core28 core29 core30 core31
+agg36 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core32 core33 core34 core35 core36 core37 core38 core39
+agg37 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core40 core41 core42 core43 core44 core45 core46 core47
+agg38 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core48 core49 core50 core51 core52 core53 core54 core55
+agg39 acc32 acc33 acc34 acc35 acc36 acc37 acc38 acc39 core56 core57 core58 core59 core60 core61 core62 core63
+agg40 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core0 core1 core2 core3 core4 core5 core6 core7
+agg41 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core8 core9 core10 core11 core12 core13 core14 core15
+agg42 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core16 core17 core18 core19 core20 core21 core22 core23
+agg43 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core24 core25 core26 core27 core28 core29 core30 core31
+agg44 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core32 core33 core34 core35 core36 core37 core38 core39
+agg45 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core40 core41 core42 core43 core44 core45 core46 core47
+agg46 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core48 core49 core50 core51 core52 core53 core54 core55
+agg47 acc40 acc41 acc42 acc43 acc44 acc45 acc46 acc47 core56 core57 core58 core59 core60 core61 core62 core63
+agg48 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core0 core1 core2 core3 core4 core5 core6 core7
+agg49 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core8 core9 core10 core11 core12 core13 core14 core15
+agg50 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core16 core17 core18 core19 core20 core21 core22 core23
+agg51 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core24 core25 core26 core27 core28 core29 core30 core31
+agg52 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core32 core33 core34 core35 core36 core37 core38 core39
+agg53 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core40 core41 core42 core43 core44 core45 core46 core47
+agg54 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core48 core49 core50 core51 core52 core53 core54 core55
+agg55 acc48 acc49 acc50 acc51 acc52 acc53 acc54 acc55 core56 core57 core58 core59 core60 core61 core62 core63
+agg56 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core0 core1 core2 core3 core4 core5 core6 core7
+agg57 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core8 core9 core10 core11 core12 core13 core14 core15
+agg58 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core16 core17 core18 core19 core20 core21 core22 core23
+agg59 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core24 core25 core26 core27 core28 core29 core30 core31
+agg60 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core32 core33 core34 core35 core36 core37 core38 core39
+agg61 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core40 core41 core42 core43 core44 core45 core46 core47
+agg62 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core48 core49 core50 core51 core52 core53 core54 core55
+agg63 acc56 acc57 acc58 acc59 acc60 acc61 acc62 acc63 core56 core57 core58 core59 core60 core61 core62 core63
+agg64 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core0 core1 core2 core3 core4 core5 core6 core7
+agg65 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core8 core9 core10 core11 core12 core13 core14 core15
+agg66 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core16 core17 core18 core19 core20 core21 core22 core23
+agg67 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core24 core25 core26 core27 core28 core29 core30 core31
+agg68 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core32 core33 core34 core35 core36 core37 core38 core39
+agg69 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core40 core41 core42 core43 core44 core45 core46 core47
+agg70 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core48 core49 core50 core51 core52 core53 core54 core55
+agg71 acc64 acc65 acc66 acc67 acc68 acc69 acc70 acc71 core56 core57 core58 core59 core60 core61 core62 core63
+agg72 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core0 core1 core2 core3 core4 core5 core6 core7
+agg73 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core8 core9 core10 core11 core12 core13 core14 core15
+agg74 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core16 core17 core18 core19 core20 core21 core22 core23
+agg75 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core24 core25 core26 core27 core28 core29 core30 core31
+agg76 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core32 core33 core34 core35 core36 core37 core38 core39
+agg77 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core40 core41 core42 core43 core44 core45 core46 core47
+agg78 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core48 core49 core50 core51 core52 core53 core54 core55
+agg79 acc72 acc73 acc74 acc75 acc76 acc77 acc78 acc79 core56 core57 core58 core59 core60 core61 core62 core63
+agg80 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core0 core1 core2 core3 core4 core5 core6 core7
+agg81 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core8 core9 core10 core11 core12 core13 core14 core15
+agg82 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core16 core17 core18 core19 core20 core21 core22 core23
+agg83 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core24 core25 core26 core27 core28 core29 core30 core31
+agg84 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core32 core33 core34 core35 core36 core37 core38 core39
+agg85 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core40 core41 core42 core43 core44 core45 core46 core47
+agg86 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core48 core49 core50 core51 core52 core53 core54 core55
+agg87 acc80 acc81 acc82 acc83 acc84 acc85 acc86 acc87 core56 core57 core58 core59 core60 core61 core62 core63
+agg88 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core0 core1 core2 core3 core4 core5 core6 core7
+agg89 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core8 core9 core10 core11 core12 core13 core14 core15
+agg90 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core16 core17 core18 core19 core20 core21 core22 core23
+agg91 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core24 core25 core26 core27 core28 core29 core30 core31
+agg92 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core32 core33 core34 core35 core36 core37 core38 core39
+agg93 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core40 core41 core42 core43 core44 core45 core46 core47
+agg94 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core48 core49 core50 core51 core52 core53 core54 core55
+agg95 acc88 acc89 acc90 acc91 acc92 acc93 acc94 acc95 core56 core57 core58 core59 core60 core61 core62 core63
+agg96 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core0 core1 core2 core3 core4 core5 core6 core7
+agg97 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core8 core9 core10 core11 core12 core13 core14 core15
+agg98 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core16 core17 core18 core19 core20 core21 core22 core23
+agg99 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core24 core25 core26 core27 core28 core29 core30 core31
+agg100 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core32 core33 core34 core35 core36 core37 core38 core39
+agg101 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core40 core41 core42 core43 core44 core45 core46 core47
+agg102 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core48 core49 core50 core51 core52 core53 core54 core55
+agg103 acc96 acc97 acc98 acc99 acc100 acc101 acc102 acc103 core56 core57 core58 core59 core60 core61 core62 core63
+agg104 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core0 core1 core2 core3 core4 core5 core6 core7
+agg105 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core8 core9 core10 core11 core12 core13 core14 core15
+agg106 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core16 core17 core18 core19 core20 core21 core22 core23
+agg107 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core24 core25 core26 core27 core28 core29 core30 core31
+agg108 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core32 core33 core34 core35 core36 core37 core38 core39
+agg109 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core40 core41 core42 core43 core44 core45 core46 core47
+agg110 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core48 core49 core50 core51 core52 core53 core54 core55
+agg111 acc104 acc105 acc106 acc107 acc108 acc109 acc110 acc111 core56 core57 core58 core59 core60 core61 core62 core63
+agg112 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core0 core1 core2 core3 core4 core5 core6 core7
+agg113 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core8 core9 core10 core11 core12 core13 core14 core15
+agg114 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core16 core17 core18 core19 core20 core21 core22 core23
+agg115 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core24 core25 core26 core27 core28 core29 core30 core31
+agg116 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core32 core33 core34 core35 core36 core37 core38 core39
+agg117 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core40 core41 core42 core43 core44 core45 core46 core47
+agg118 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core48 core49 core50 core51 core52 core53 core54 core55
+agg119 acc112 acc113 acc114 acc115 acc116 acc117 acc118 acc119 core56 core57 core58 core59 core60 core61 core62 core63
+agg120 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core0 core1 core2 core3 core4 core5 core6 core7
+agg121 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core8 core9 core10 core11 core12 core13 core14 core15
+agg122 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core16 core17 core18 core19 core20 core21 core22 core23
+agg123 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core24 core25 core26 core27 core28 core29 core30 core31
+agg124 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core32 core33 core34 core35 core36 core37 core38 core39
+agg125 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core40 core41 core42 core43 core44 core45 core46 core47
+agg126 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core48 core49 core50 core51 core52 core53 core54 core55
+agg127 acc120 acc121 acc122 acc123 acc124 acc125 acc126 acc127 core56 core57 core58 core59 core60 core61 core62 core63
+acc0 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc1 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc2 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc3 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc4 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc5 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc6 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc7 agg0 agg1 agg2 agg3 agg4 agg5 agg6 agg7
+acc8 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc9 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc10 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc11 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc12 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc13 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc14 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc15 agg8 agg9 agg10 agg11 agg12 agg13 agg14 agg15
+acc16 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc17 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc18 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc19 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc20 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc21 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc22 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc23 agg16 agg17 agg18 agg19 agg20 agg21 agg22 agg23
+acc24 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc25 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc26 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc27 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc28 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc29 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc30 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc31 agg24 agg25 agg26 agg27 agg28 agg29 agg30 agg31
+acc32 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc33 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc34 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc35 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc36 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc37 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc38 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc39 agg32 agg33 agg34 agg35 agg36 agg37 agg38 agg39
+acc40 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc41 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc42 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc43 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc44 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc45 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc46 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc47 agg40 agg41 agg42 agg43 agg44 agg45 agg46 agg47
+acc48 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc49 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc50 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc51 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc52 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc53 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc54 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc55 agg48 agg49 agg50 agg51 agg52 agg53 agg54 agg55
+acc56 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc57 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc58 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc59 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc60 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc61 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc62 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc63 agg56 agg57 agg58 agg59 agg60 agg61 agg62 agg63
+acc64 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc65 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc66 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc67 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc68 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc69 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc70 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc71 agg64 agg65 agg66 agg67 agg68 agg69 agg70 agg71
+acc72 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc73 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc74 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc75 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc76 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc77 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc78 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc79 agg72 agg73 agg74 agg75 agg76 agg77 agg78 agg79
+acc80 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc81 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc82 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc83 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc84 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc85 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc86 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc87 agg80 agg81 agg82 agg83 agg84 agg85 agg86 agg87
+acc88 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc89 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc90 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc91 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc92 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc93 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc94 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc95 agg88 agg89 agg90 agg91 agg92 agg93 agg94 agg95
+acc96 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc97 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc98 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc99 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc100 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc101 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc102 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc103 agg96 agg97 agg98 agg99 agg100 agg101 agg102 agg103
+acc104 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc105 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc106 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc107 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc108 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc109 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc110 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc111 agg104 agg105 agg106 agg107 agg108 agg109 agg110 agg111
+acc112 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc113 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc114 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc115 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc116 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc117 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc118 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc119 agg112 agg113 agg114 agg115 agg116 agg117 agg118 agg119
+acc120 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc121 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc122 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc123 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc124 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc125 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc126 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
+acc127 agg120 agg121 agg122 agg123 agg124 agg125 agg126 agg127
