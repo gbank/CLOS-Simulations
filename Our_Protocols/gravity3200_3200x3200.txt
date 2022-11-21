@@ -2,4 +2,4 @@ Gravity Matrix for the k=80 CLOS Topology.
 
 Due to size constraints can be downloaded from: https://myfiles.sbg.ac.at/index.php/s/car8CtNs3WnkbdY
 
-Then this file with the downloaded one. (Alternatively can also be generated via Related_Protocols/main.py)
+Then replace this file with the downloaded one. (Alternatively can also be generated via Related_Protocols/main.py)
