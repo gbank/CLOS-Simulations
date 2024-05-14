@@ -87,13 +87,13 @@ def simulateTrafficMatrix(clos, arbs, fEdges, edgeFailRate, k, matrix,  algo_lis
         
         
         
-        for dest in range(0,k*(k//2)): # TODO THIS LOOP KILLS THE PERFORMANCE! (IN ALL-TO-ONE CASE ONLY?)
+        for dest in range(0,k*(k//2)): 
             for source in range(0, k*(k//2)):
                 if dest != source and matrix[source][dest] > 0.0000001:
                     (has_cycle,hops,_,_) = route(algo, 'acc' + str(source), 'acc' + str(dest) , clos, arbs,k,fEdges, isomorphism_variant)
                     count = count +1
 
-                    weight = matrix[source][dest] # Packet weight. TODO How to include into average hop calculation? 
+                    weight = matrix[source][dest] # Packet weight.
                     
                     if has_cycle:
                         cycles = cycles + 1
